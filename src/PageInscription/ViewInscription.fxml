@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="921.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefWidth="1400.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="100.0" prefWidth="313.0" text="Gestions des Inscriptions">
+               <font>
+                  <Font name="Bauhaus 93" size="24.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="200.0" prefWidth="800.0" />
+            <JFXButton alignment="CENTER" contentDisplay="TOP" prefHeight="99.0" prefWidth="215.0" text="Deconnexion">
+               <font>
+                  <Font name="Bauhaus 93" size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" layoutX="5.0" layoutY="139.0" prefHeight="35.0" prefWidth="442.0" text="Inscrire un étudiant">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-102.0" layoutY="213.0" prefHeight="35.0" prefWidth="442.0" text="Identifiant">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField layoutX="182.0" layoutY="215.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <Label alignment="CENTER" layoutX="-102.0" layoutY="276.0" prefHeight="35.0" prefWidth="442.0" text="Date">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField layoutX="182.0" layoutY="276.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <Label alignment="CENTER" layoutX="-102.0" layoutY="337.0" prefHeight="35.0" prefWidth="442.0" text="Groupe">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXComboBox layoutX="182.0" layoutY="339.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <Label alignment="CENTER" layoutX="-102.0" layoutY="393.0" prefHeight="35.0" prefWidth="442.0" text="Session">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXComboBox layoutX="182.0" layoutY="395.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <Label alignment="CENTER" layoutX="-102.0" layoutY="454.0" prefHeight="35.0" prefWidth="442.0" text="Paiement">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField layoutX="182.0" layoutY="456.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <TableView layoutX="624.0" layoutY="209.0" prefHeight="490.0" prefWidth="523.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID " />
+          <TableColumn prefWidth="116.0" text="ID Etudiant" />
+            <TableColumn prefWidth="64.0" text="Date" />
+            <TableColumn prefWidth="83.0" text="Groupe" />
+            <TableColumn prefWidth="68.0" text="Session" />
+            <TableColumn prefWidth="110.0" text="Paiement" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="252.0" layoutY="557.0" text="Annuler">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="97.0" layoutY="557.0" text="Valider">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="730.0" layoutY="139.0" prefHeight="51.0" prefWidth="292.0" text="Afficher la liste">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
