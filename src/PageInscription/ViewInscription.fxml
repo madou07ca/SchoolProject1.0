@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="921.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="921.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControlerInscription">
    <children>
       <HBox prefWidth="1400.0">
          <children>
@@ -22,7 +21,7 @@
                </font>
             </Label>
             <VBox prefHeight="200.0" prefWidth="800.0" />
-            <JFXButton alignment="CENTER" contentDisplay="TOP" prefHeight="99.0" prefWidth="215.0" text="Deconnexion">
+            <JFXButton fx:id="bDeconnexion" alignment="CENTER" contentDisplay="TOP" onAction="#seDeconnecter" prefHeight="99.0" prefWidth="215.0" text="Deconnexion">
                <font>
                   <Font name="Bauhaus 93" size="24.0" />
                </font>
@@ -34,36 +33,36 @@
             <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="-102.0" layoutY="213.0" prefHeight="35.0" prefWidth="442.0" text="Identifiant">
+      <Label fx:id="identifiant" alignment="CENTER" layoutX="-102.0" layoutY="213.0" prefHeight="35.0" prefWidth="442.0" text="Identifiant">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="182.0" layoutY="215.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
-      <Label alignment="CENTER" layoutX="-102.0" layoutY="276.0" prefHeight="35.0" prefWidth="442.0" text="Date">
+      <JFXTextField fx:id="tIdentifiant" layoutX="182.0" layoutY="215.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <Label fx:id="date" alignment="CENTER" layoutX="-102.0" layoutY="276.0" prefHeight="35.0" prefWidth="442.0" text="Date">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="182.0" layoutY="276.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
-      <Label alignment="CENTER" layoutX="-102.0" layoutY="337.0" prefHeight="35.0" prefWidth="442.0" text="Groupe">
+      <JFXTextField fx:id="tDate" layoutX="182.0" layoutY="276.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <Label fx:id="groupe" alignment="CENTER" layoutX="-102.0" layoutY="337.0" prefHeight="35.0" prefWidth="442.0" text="Groupe">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXComboBox layoutX="182.0" layoutY="339.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
-      <Label alignment="CENTER" layoutX="-102.0" layoutY="393.0" prefHeight="35.0" prefWidth="442.0" text="Session">
+      <JFXComboBox fx:id="cGroupe" layoutX="182.0" layoutY="339.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <Label fx:id="session" alignment="CENTER" layoutX="-102.0" layoutY="393.0" prefHeight="35.0" prefWidth="442.0" text="Session">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXComboBox layoutX="182.0" layoutY="395.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
-      <Label alignment="CENTER" layoutX="-102.0" layoutY="454.0" prefHeight="35.0" prefWidth="442.0" text="Paiement">
+      <JFXComboBox fx:id="cSession" layoutX="182.0" layoutY="395.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <Label fx:id="Paiement" alignment="CENTER" layoutX="-102.0" layoutY="454.0" prefHeight="35.0" prefWidth="442.0" text="Paiement">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXTextField layoutX="182.0" layoutY="456.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
+      <JFXTextField fx:id="tPaiement" layoutX="182.0" layoutY="456.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
       <TableView layoutX="624.0" layoutY="209.0" prefHeight="490.0" prefWidth="523.0">
         <columns>
           <TableColumn prefWidth="75.0" text="ID " />
@@ -74,12 +73,12 @@
             <TableColumn prefWidth="110.0" text="Paiement" />
         </columns>
       </TableView>
-      <JFXButton layoutX="252.0" layoutY="557.0" text="Annuler">
+      <JFXButton fx:id="bAnnuler" layoutX="252.0" layoutY="557.0" onAction="#Annuler" text="Annuler">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="97.0" layoutY="557.0" text="Valider">
+      <JFXButton fx:id="bValider" layoutX="97.0" layoutY="557.0" text="Valider">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
