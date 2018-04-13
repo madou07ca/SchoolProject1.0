@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="941.0" prefWidth="1290.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ges_Session_Groupe.controllerSessionGroupe">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="1.0" prefHeight="78.0" prefWidth="1308.0">
+         <children>
+            <Label prefHeight="69.0" prefWidth="416.0" text="Gestion Groupe-Session">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="69.0" prefWidth="842.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="14.0" prefHeight="42.0" prefWidth="333.0" text="School1.0" textFill="#944040">
+                     <font>
+                        <Font name="Bauhaus 93" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <VBox alignment="TOP_RIGHT" prefHeight="69.0" prefWidth="188.0">
+               <children>
+                  <JFXButton fx:id="btDeconnexion" prefHeight="31.0" prefWidth="190.0" text="Deconnexion">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btRetour" layoutX="45.0" layoutY="10.0" prefHeight="31.0" prefWidth="191.0" text="Retour">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="24.0" layoutY="79.0" prefHeight="800.0" prefWidth="597.0" style="-fx-background-color: #D19275;">
+         <children>
+            <TableView fx:id="tViewGroupe" layoutX="4.0" layoutY="458.0" prefHeight="308.0" prefWidth="569.0">
+               <columns>
+                  <TableColumn fx:id="viewIdGroupe" prefWidth="54.0" text="ID" />
+                  <TableColumn fx:id="viewNomGroupe" prefWidth="75.0" text="Nom" />
+                  <TableColumn fx:id="viewExamGroupe" prefWidth="99.0" text="Date Examen" />
+                  <TableColumn fx:id="viewSalleGroupe" prefWidth="72.0" text="Salle" />
+                  <TableColumn fx:id="viewSessionGroupe" prefWidth="75.0" text="Session" />
+                  <TableColumn fx:id="viewModuleGroupe" prefWidth="108.0" text="Module" />
+                  <TableColumn fx:id="viewHrGroupe" prefWidth="85.0" text="Horaire" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="95.0" layoutY="-3.0" prefHeight="35.0" prefWidth="367.0" text="Groupe">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="5.0" layoutY="67.0" prefHeight="228.0" prefWidth="423.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="161.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="10.0" prefWidth="329.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="38.0" prefWidth="170.0" text="Identifiant" />
+                  <JFXTextField fx:id="tIdGroupe" GridPane.columnIndex="1" />
+                  <Label text="Nom" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="tNomGroupe" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Date Examen" GridPane.rowIndex="2" />
+                  <JFXTextField fx:id="tLibelleMatiere" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Salle" GridPane.rowIndex="3" />
+                  <Label text="Session" GridPane.rowIndex="4" />
+                  <Label text="Module" GridPane.rowIndex="5" />
+                  <Label text="Horaire" GridPane.rowIndex="6" />
+                  <JFXComboBox fx:id="tHrGroupe" prefHeight="31.0" prefWidth="301.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <JFXDatePicker fx:id="dateExam" prefHeight="31.0" prefWidth="304.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <JFXComboBox fx:id="cSalle" prefHeight="31.0" prefWidth="298.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <JFXComboBox fx:id="cSession" prefHeight="31.0" prefWidth="330.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <JFXComboBox fx:id="cModule" prefHeight="31.0" prefWidth="304.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
+            <JFXButton fx:id="annulerGroupe" layoutX="152.0" layoutY="332.0" onAction="#AnnulerGroupe" prefHeight="31.0" prefWidth="98.0" text="Annuler" />
+            <JFXButton fx:id="SupGroupe" layoutX="269.0" layoutY="332.0" onAction="#SupprimerGroupe" prefHeight="31.0" prefWidth="98.0" text="Supprimer" />
+            <JFXButton fx:id="AfficherGroupe" layoutX="14.0" layoutY="400.0" onAction="#AfficherGroupe" prefHeight="31.0" prefWidth="213.0" text="Afficher la liste" />
+            <JFXTextField fx:id="tSupMatiere" layoutX="387.0" layoutY="332.0" prefHeight="31.0" prefWidth="205.0" promptText="Saisir l'ID" />
+            <ImageView fitHeight="41.0" fitWidth="33.0" layoutX="14.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Ressource/143510.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="663.0" layoutY="79.0" prefHeight="800.0" prefWidth="597.0" style="-fx-background-color: #D19275;">
+         <children>
+            <TableView fx:id="tViewSession" layoutX="4.0" layoutY="458.0" prefHeight="308.0" prefWidth="495.0">
+               <columns>
+                  <TableColumn fx:id="viewIdSession" prefWidth="72.0" text="ID" />
+                  <TableColumn fx:id="viewAnneeSession" prefWidth="104.0" text="Année" />
+                  <TableColumn fx:id="viewNomSession" prefWidth="91.0" text="Nom" />
+                  <TableColumn fx:id="viewDdSession" prefWidth="110.0" text="Date Debut" />
+                  <TableColumn fx:id="viewNivMat1" prefWidth="117.0" text="Date Fin" />
+                  <TableColumn fx:id="viewNivMat11" prefWidth="117.0" text="Date Fin" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="95.0" layoutY="-3.0" prefHeight="35.0" prefWidth="367.0" text="Session">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="5.0" layoutY="67.0" prefHeight="228.0" prefWidth="423.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="161.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="10.0" prefWidth="329.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="38.0" prefWidth="170.0" text="Identifiant" />
+                  <JFXTextField fx:id="tIdSession" GridPane.columnIndex="1" />
+                  <Label text="Année" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="tAnneeSession" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Nom" GridPane.rowIndex="2" />
+                  <JFXTextField fx:id="tNomSession" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Date Début" GridPane.rowIndex="3" />
+                  <Label text="Date Fin" GridPane.rowIndex="4" />
+                  <JFXDatePicker fx:id="dateDebutSession" prefHeight="31.0" prefWidth="306.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <JFXDatePicker fx:id="DateFinSession" prefHeight="31.0" prefWidth="312.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <JFXButton fx:id="annulerSession" layoutX="152.0" layoutY="332.0" onAction="#AnnulerSession" prefHeight="31.0" prefWidth="98.0" text="Annuler" />
+            <JFXButton fx:id="SupSession" layoutX="269.0" layoutY="332.0" onAction="#SupprimerSession" prefHeight="31.0" prefWidth="98.0" text="Supprimer" />
+            <JFXButton fx:id="AfficherSession" layoutX="14.0" layoutY="400.0" onAction="#AfficherSession" prefHeight="31.0" prefWidth="213.0" text="Afficher la liste" />
+            <JFXTextField fx:id="tSupSession" layoutX="387.0" layoutY="332.0" prefHeight="31.0" prefWidth="205.0" promptText="Saisir l'ID" />
+            <ImageView fitHeight="41.0" fitWidth="33.0" layoutX="14.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Ressource/143510.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

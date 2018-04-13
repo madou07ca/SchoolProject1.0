@@ -10,15 +10,15 @@ import java.util.Date;
  *
  */
 public class Inscription {
-	private static int compteur=0;
+	//private static int compteur=0;
 	private int idInscription;
 	private Date dateInscription;
 	private Etudiant etudiant;
 	private Groupe groupe;
 	private Paiement paiement;
 	private Session session;
-	public Inscription( Date dateInscription, Etudiant etudiant, Groupe groupe, Paiement paiement,
-			Session session) {
+	/*public Inscription( Date dateInscription, int etudiant, int groupe, int paiement,
+			int session) {
 		super();
 		compteur++;
 		this.idInscription = compteur;
@@ -28,15 +28,26 @@ public class Inscription {
 		this.paiement = paiement;
 		this.session = session;
 	}
+   */
+	public Inscription(int idInscription, Date dateInscription, int etudiant, int groupe, int paiement,
+			int session) {
+		super();
+		this.idInscription = idInscription;
+		this.dateInscription = dateInscription;
+		/*this.etudiant = etudiant;
+		this.groupe = groupe;
+		this.paiement = paiement;
+		this.session = session;*/
+	}
 	public Inscription() {
 		// TODO Auto-generated constructor stub
 	}
-	public static int getCompteur() {
+	/*public static int getCompteur() {
 		return compteur;
 	}
 	public static void setCompteur(int compteur) {
 		Inscription.compteur = compteur;
-	}
+	}*/
 	public int getIdInscription() {
 		return idInscription;
 	}

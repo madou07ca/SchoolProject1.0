@@ -26,6 +26,17 @@ public class Matiere {
 		this.nbreHeures = nbreHeures;
 		this.module = module;
 	}
+	public Matiere(int idMatiere, String nomMatiere, String libelleMatiere, String langLibelleMatiere,
+			String nivMatiere, String nbreHeures) {
+		super();
+		this.idMatiere = idMatiere;
+		this.nomMatiere = nomMatiere;
+		this.libelleMatiere = libelleMatiere;
+		this.langLibelleMatiere = langLibelleMatiere;
+		this.nivMatiere = nivMatiere;
+		this.nbreHeures = nbreHeures;
+		
+	}
 	public Matiere() {
 		// TODO Auto-generated constructor stub
 	}

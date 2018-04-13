@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPrincipale" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="905.0" prefWidth="1299.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ges_Matiere_module.ControllerMatiereSalleModule">
+   <children>
+      <AnchorPane layoutX="625.0" layoutY="469.0" prefHeight="399.0" prefWidth="671.0" style="-fx-background-color: #CD5C5C;">
+         <children>
+            <GridPane layoutX="13.0" layoutY="40.0" prefHeight="120.0" prefWidth="374.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="144.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="313.0" minWidth="10.0" prefWidth="305.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Identifiant" />
+                  <Label text="Nom" GridPane.rowIndex="1" />
+                  <Label text="Capacité" GridPane.rowIndex="2" />
+                  <Label text="Disponibilité" GridPane.rowIndex="3" />
+                  <JFXTextField fx:id="tIdSalle" GridPane.columnIndex="1" />
+                  <JFXTextField fx:id="tNomSalle" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="tCapaciteSalle" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <JFXComboBox fx:id="cDispoSalle" prefHeight="31.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <Label alignment="CENTER" layoutX="190.0" layoutY="4.0" prefHeight="21.0" prefWidth="323.0" text="Salle">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tViewSalle" layoutX="6.0" layoutY="185.0" prefHeight="211.0" prefWidth="367.0">
+              <columns>
+                <TableColumn fx:id="viewId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="viewNom" prefWidth="75.0" text="Nom" />
+                  <TableColumn fx:id="viewCapacite" prefWidth="75.0" text="Capacité" />
+                  <TableColumn fx:id="DispoView" prefWidth="113.0" text="Dispo" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="ajoutSalle" layoutX="412.0" layoutY="56.0" onAction="#AjouterSalle" prefHeight="31.0" prefWidth="137.0" text="Ajouter" />
+            <JFXButton fx:id="annulerSalle" layoutX="422.0" layoutY="87.0" onAction="#AnnulerSalle" prefHeight="31.0" prefWidth="137.0" text="Annuler" />
+            <JFXButton fx:id="afficherSalle" layoutX="417.0" layoutY="129.0" onAction="#AfficherSalle" prefHeight="31.0" prefWidth="137.0" text="Afficher" />
+            <Label layoutX="387.0" layoutY="190.0" prefHeight="21.0" prefWidth="197.0" text="Rechercher par Capacité" />
+            <JFXTextField fx:id="tSaisirCapaciteSalle" layoutX="387.0" layoutY="229.0" prefHeight="31.0" prefWidth="255.0" promptText="Saisir la capacité" />
+            <JFXButton fx:id="validerSalle" layoutX="380.0" layoutY="293.0" onAction="#ValiderRechercheSalle" prefHeight="31.0" prefWidth="137.0" text="Valider" />
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER_LEFT" prefHeight="69.0" prefWidth="1299.0">
+         <children>
+            <Label prefHeight="69.0" prefWidth="416.0" text="Gestion Matière-Module-Salle">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="69.0" prefWidth="842.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="14.0" prefHeight="42.0" prefWidth="333.0" text="School1.0" textFill="#944040">
+                     <font>
+                        <Font name="Bauhaus 93" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <VBox alignment="TOP_RIGHT" prefHeight="69.0" prefWidth="188.0">
+               <children>
+                  <JFXButton prefHeight="31.0" prefWidth="190.0" text="Deconnexion">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="45.0" layoutY="10.0" prefHeight="31.0" prefWidth="191.0" text="Retour">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="14.0" layoutY="69.0" prefHeight="800.0" prefWidth="597.0" style="-fx-background-color: #D19275;">
+         <children>
+            <TableView fx:id="tViewMatiere" layoutX="4.0" layoutY="458.0" prefHeight="308.0" prefWidth="569.0">
+              <columns>
+                <TableColumn fx:id="viewIdMat" prefWidth="54.0" text="ID" />
+                <TableColumn fx:id="viewNomMat" prefWidth="75.0" text="Nom" />
+                  <TableColumn fx:id="viewLibMat" prefWidth="62.999969482421875" text="Libellé" />
+                  <TableColumn fx:id="viewLangMat" prefWidth="108.0" text="Langue Libellé" />
+                  <TableColumn fx:id="viewNivMat" prefWidth="75.0" text="Niveau" />
+                  <TableColumn fx:id="viewHrMat" prefWidth="108.0" text="Nbres Heures" />
+                  <TableColumn fx:id="viewModuleMat" prefWidth="85.0" text="Module" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="95.0" layoutY="-3.0" prefHeight="35.0" prefWidth="367.0" text="Matière">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="5.0" layoutY="67.0" prefHeight="228.0" prefWidth="423.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="161.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="10.0" prefWidth="329.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="38.0" prefWidth="170.0" text="Identifiant" />
+                  <JFXTextField fx:id="tIdMatiere" GridPane.columnIndex="1" />
+                  <Label text="Nom" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="tNomMatiere" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Libellé" GridPane.rowIndex="2" />
+                  <JFXTextField fx:id="tLibelleMatiere" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Langue Libellé" GridPane.rowIndex="3" />
+                  <JFXTextField fx:id="tLangueMatiere" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Niveau" GridPane.rowIndex="4" />
+                  <Label text="Nombres Heures" GridPane.rowIndex="5" />
+                  <Label text="Module" GridPane.rowIndex="6" />
+                  <JFXTextField fx:id="tNiveauMatiere" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <JFXTextField fx:id="tNbreHeures" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <JFXComboBox fx:id="cMatiere" prefHeight="31.0" prefWidth="301.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <JFXButton fx:id="ajoutMatiere" layoutX="14.0" layoutY="321.0" onAction="#AjouterMatiere" prefHeight="42.0" prefWidth="127.0" text="Ajouter" />
+            <JFXButton fx:id="annulerMatiere" layoutX="152.0" layoutY="332.0" onAction="#AnnulerMatiere" prefHeight="31.0" prefWidth="98.0" text="Annuler" />
+            <JFXButton fx:id="SupMatiere" layoutX="269.0" layoutY="332.0" onAction="#SupprimerMatiere" prefHeight="31.0" prefWidth="98.0" text="Supprimer" />
+            <JFXButton fx:id="AfficherMatiere" layoutX="14.0" layoutY="400.0" onAction="#AfficherMatiere" prefHeight="31.0" prefWidth="213.0" text="Afficher la liste" />
+            <JFXTextField fx:id="tSupMatiere" layoutX="387.0" layoutY="332.0" prefHeight="31.0" prefWidth="205.0" promptText="Saisir l'ID" />
+            <ImageView fitHeight="41.0" fitWidth="33.0" layoutX="14.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Ressource/143510.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="625.0" layoutY="69.0" prefHeight="385.0" prefWidth="671.0" style="-fx-background-color: #CD5C5C;">
+         <children>
+            <Label alignment="CENTER" layoutX="194.0" layoutY="4.0" prefHeight="21.0" prefWidth="255.0" text="Module">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="12.0" layoutY="53.0" prefHeight="180.0" prefWidth="569.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="205.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="347.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Identifiant" />
+                  <Label text="Nom Module" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="tIdModule" GridPane.columnIndex="1" />
+                  <JFXTextField fx:id="tNomModule" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="ajoutModule" onAction="#AjouterModule" prefHeight="53.0" prefWidth="222.0" text="Ajouter" GridPane.rowIndex="2" />
+                  <JFXButton fx:id="annulerModule" onAction="#AnnulerModule" prefHeight="53.0" prefWidth="222.0" text="Annuler" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

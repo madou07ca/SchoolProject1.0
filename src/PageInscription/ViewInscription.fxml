@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="921.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControlerInscription">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="921.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PageInscription.ControlerInscription">
    <children>
       <HBox prefWidth="1400.0">
          <children>
@@ -20,7 +20,7 @@
                   <Font name="Bauhaus 93" size="24.0" />
                </font>
             </Label>
-            <VBox prefHeight="200.0" prefWidth="800.0" />
+            <VBox prefHeight="171.0" prefWidth="800.0" />
             <JFXButton fx:id="bDeconnexion" alignment="CENTER" contentDisplay="TOP" onAction="#seDeconnecter" prefHeight="99.0" prefWidth="215.0" text="Deconnexion">
                <font>
                   <Font name="Bauhaus 93" size="24.0" />
@@ -78,7 +78,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="bValider" layoutX="97.0" layoutY="557.0" text="Valider">
+      <JFXButton fx:id="bValider" layoutX="97.0" layoutY="557.0" onAction="#Valider" text="Valider">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
@@ -88,5 +88,6 @@
             <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
       </JFXButton>
+      <JFXTextField fx:id="tInscription" layoutX="180.0" layoutY="175.0" prefHeight="31.0" prefWidth="292.0" style="-fx-background-color: #deb887;" />
    </children>
 </AnchorPane>

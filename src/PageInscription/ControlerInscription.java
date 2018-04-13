@@ -1,28 +1,37 @@
 package PageInscription;	
 	import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 
+import coucheControler.Metier;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import partieConsole.Inscription;
 
 	public class ControlerInscription implements Initializable {
 		
 		ObservableList<Integer> groupeList = FXCollections.observableArrayList(1,2,3,4);
 		ObservableList<Integer> sessionList = FXCollections.observableArrayList(1,2,3,4);
+		Metier m = new Metier();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		//Date d1=null;
+		//Date d2=null;
+		
+			
 
-	    @FXML
-	    private ResourceBundle resources;
 
-	    @FXML
-	    private URL location;
+	
 
 	    @FXML
 	    private JFXButton bDeconnexion;
@@ -38,12 +47,15 @@ import javafx.scene.control.Label;
 
 	    @FXML
 	    private JFXTextField tDate;
+	    
+	    @FXML
+	    private JFXTextField tInscription;
 
 	    @FXML
 	    private Label groupe;
 
 	    @FXML
-	    private JFXComboBox<Integer> cGroupe;
+	    private JFXComboBox<Integer> cGroupe ;
 
 	    @FXML
 	    private Label session;
@@ -63,14 +75,14 @@ import javafx.scene.control.Label;
 	    @FXML
 	    private JFXButton bValider;
 	    
+	    
+	    
 
-	    public ControlerInscription(ResourceBundle resources, URL location, JFXButton bDeconnexion, Label identifiant,
+	   /* public ControlerInscription(JFXButton bDeconnexion, Label identifiant,
 				JFXTextField tIdentifiant, Label date, JFXTextField tDate, Label groupe, JFXComboBox<Integer> cGroupe,
 				Label session, JFXComboBox<Integer> cSession, Label paiement, JFXTextField tPaiement, JFXButton bAnnuler,
 				JFXButton bValider) {
 			super();
-			this.resources = resources;
-			this.location = location;
 			this.bDeconnexion = bDeconnexion;
 			this.identifiant = identifiant;
 			this.tIdentifiant = tIdentifiant;
@@ -84,23 +96,7 @@ import javafx.scene.control.Label;
 			this.tPaiement = tPaiement;
 			this.bAnnuler = bAnnuler;
 			this.bValider = bValider;
-		}
-
-		public ResourceBundle getResources() {
-			return resources;
-		}
-
-		public void setResources(ResourceBundle resources) {
-			this.resources = resources;
-		}
-
-		public URL getLocation() {
-			return location;
-		}
-
-		public void setLocation(URL location) {
-			this.location = location;
-		}
+		}*/
 
 		public JFXButton getbDeconnexion() {
 			return bDeconnexion;
@@ -208,7 +204,32 @@ import javafx.scene.control.Label;
 
 		@FXML
 	    void Annuler(ActionEvent event) {
+			
+			
 
+	    }
+		
+		
+		@FXML
+	    void Valider(ActionEvent event) {
+			int id=Integer.parseInt(tIdentifiant.getText());
+			int pay=Integer.parseInt(tPaiement.getText());
+			int idInscris=Integer.parseInt(tInscription.getText());
+			int idGroupe = 201801;
+			int idSession = 10;
+			String date = tDate.getText();
+			Date d1= null;
+			try {
+				d1 = sdf.parse("2018-03-15");
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//Date d2 = sdf.parse( "19-01-2018");
+			Inscription inscris = new Inscription(idInscris,null,id,idGroupe,pay,idSession);
+			m.AjouterInscription(inscris, id,idGroupe,pay,idSession);
+			//m.AjouterInscription(inscris, id, 10, 201801, pay);
+			System.out.println("Ajouter");
 	    }
 
 	    @FXML
@@ -235,10 +256,8 @@ import javafx.scene.control.Label;
 	    }*/
 
 		public void initialize() {
-			cGroupe.setValue(1);
-			cGroupe.setItems(groupeList);
-			cSession.setValue(1);
-			cSession.setItems(sessionList);
+			
+			//comboBox.getItems().setAll(car1, car2, car3, car4);
 			
 		}
 		
@@ -246,6 +265,11 @@ import javafx.scene.control.Label;
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			// TODO Auto-generated method stub
+			
+			cGroupe.setValue(1);
+			cGroupe.setItems(groupeList);
+			cSession.setValue(1);
+			cSession.setItems(sessionList);
 			
 		}
 	}

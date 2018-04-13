@@ -4,6 +4,7 @@
 package partieConsole;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  * @author Mamadou bobo
@@ -24,6 +25,9 @@ public class Session {
 		this.dateFinSession = dateFinSession;
 	}
 	public Session() {
+		// TODO Auto-generated constructor stub
+	}
+	public Session(int id, int anne, String text, LocalDate value, LocalDate value2) {
 		// TODO Auto-generated constructor stub
 	}
 	public int getIdSession() {

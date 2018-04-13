@@ -1090,7 +1090,7 @@ public class Metier implements IMetier {
 				e.setIdSalle(res.getInt("ID_Salle"));
 				e.setNomSalle(res.getString("Nom_Salle"));
 				e.setCapaciteSalle(res.getInt("Capacite_Salle"));
-				e.setDisponibiliteSalle(res.getString("Disponibilite"));
+				e.setDisponibiliteSalle(res.getString("Disonibilite"));
 				listSalle.add(e);
 			}
 
@@ -1107,15 +1107,15 @@ public class Metier implements IMetier {
 	public List<Salle> ChercherSalle(int capacite) {
 		Connection conn = ConnexionBD.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("Select *from Salle where capacite_Salle = ?");
+			PreparedStatement ps = conn.prepareStatement("Select * from Salle where capacite_Salle >= ?");
 			ps.setInt(1, capacite);
 			ResultSet res = ps.executeQuery();
 			while (res.next()) {
 				Salle s = new Salle();
 				s.setIdSalle(res.getInt("ID_Salle"));
 				s.setNomSalle(res.getString("Nom_Salle"));
-				s.setCapaciteSalle(res.getInt("Capacte_Salle"));
-				s.setDisponibiliteSalle(res.getString("Disponibilite"));
+				s.setCapaciteSalle(res.getInt("Capacite_Salle"));
+				s.setDisponibiliteSalle(res.getString("Disonibilite"));
 				listSalle.add(s);
 			}
 			ps.close();
@@ -1202,12 +1202,12 @@ public class Metier implements IMetier {
 	public void AjouterInscription(Inscription e, int idEtudiant, int idSession, int idGroupe, int idPaiement) {
 		Connection conn = ConnexionBD.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("insert into inscription values (?, ?, ?, ?, ?);");
-
-			ps.setInt(1, idEtudiant);
-			ps.setDate(2, (Date) e.getDateInscription());
-			ps.setInt(3, idSession);
-			ps.setInt(4, idGroupe);
+			PreparedStatement ps = conn.prepareStatement("insert into inscription values (?, ?, ?, ?, ?, ?);");
+			ps.setInt(1, e.getIdInscription());
+			ps.setInt(2, idEtudiant);
+			ps.setDate(6, (Date) e.getDateInscription());
+			ps.setInt(4, idSession);
+			ps.setInt(3, idGroupe);
 			ps.setInt(5, idPaiement);
 			ps.executeUpdate();
 			listInscris.add(e);
@@ -1386,13 +1386,14 @@ public class Metier implements IMetier {
 	public void AjouterMatiere(Matiere e, int numModule) {
 		Connection conn = ConnexionBD.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("Insert into Matiere Values (?, ?, ?, ?, ?, ?) ;");
+			PreparedStatement ps = conn.prepareStatement("Insert into matiere Values (?, ?, ?, ?, ?, ?) ;");
 			ps.setInt(1, e.getIdMatiere());
 			ps.setString(2, e.getNomMatiere());
 			ps.setString(3, e.getLibelleMatiere());
 			ps.setString(4, e.getLangLibelleMatiere());
 			ps.setString(5, e.getNivMatiere());
-			ps.setInt(6, e.getModule().getIdModule());
+			ps.setInt(6, numModule);
+			ps.executeUpdate();
 
 			ps.close();
 
@@ -1407,11 +1408,13 @@ public class Metier implements IMetier {
 	public void SuppridmerMatiere(int id) {
 		Connection conn = ConnexionBD.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("delete from Matiere where ID_Matiere = ?");
+			PreparedStatement ps = conn.prepareStatement("delete  from matiere where ID_Matiere = ?");
 			ps.setInt(1, id);
+			ps.executeUpdate();
 			for (Matiere m : listMatiere) {
 				if (m.getIdMatiere() == id) {
 					listMatiere.remove(m);
+					
 					System.out.println("Suppression effectué avec succès");
 				} else
 					System.out.println("Id inconnu , sorry !!!");

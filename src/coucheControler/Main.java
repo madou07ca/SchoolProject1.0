@@ -1,6 +1,7 @@
 package coucheControler;
 
 import partieConsole.Etudiant;
+import partieConsole.Inscription;
 import partieConsole.Salle;
 import partieConsole.Secretaire;
 import partieConsole.Administrateur;
@@ -120,6 +121,11 @@ public class Main {
 		for (Salle e : maListe) {
 			System.out.println(e.toString());
 		}
+		
+		/*Inscription inscris = new Inscription(idInscris,null,id,idGroupe,pay,idSession);
+		metier.AjouterInscription(inscris, id,idGroupe,pay,idSession);
+		//m.AjouterInscription(inscris, id, 10, 201801, pay);
+		System.out.println("Ajouter");*/
 
 	}
 
