@@ -13,28 +13,26 @@ public class Matiere {
 	private String libelleMatiere;
 	private String langLibelleMatiere;
 	private String nivMatiere;
-	private String nbreHeures;
 	private Module module;
 	public Matiere(int idMatiere, String nomMatiere, String libelleMatiere, String langLibelleMatiere,
-			String nivMatiere, String nbreHeures, Module module) {
+			String nivMatiere, int idModule) {
 		super();
 		this.idMatiere = idMatiere;
 		this.nomMatiere = nomMatiere;
 		this.libelleMatiere = libelleMatiere;
 		this.langLibelleMatiere = langLibelleMatiere;
 		this.nivMatiere = nivMatiere;
-		this.nbreHeures = nbreHeures;
-		this.module = module;
+	
 	}
 	public Matiere(int idMatiere, String nomMatiere, String libelleMatiere, String langLibelleMatiere,
-			String nivMatiere, String nbreHeures) {
+			String nivMatiere) {
 		super();
 		this.idMatiere = idMatiere;
 		this.nomMatiere = nomMatiere;
 		this.libelleMatiere = libelleMatiere;
 		this.langLibelleMatiere = langLibelleMatiere;
 		this.nivMatiere = nivMatiere;
-		this.nbreHeures = nbreHeures;
+		
 		
 	}
 	public Matiere() {
@@ -71,12 +69,6 @@ public class Matiere {
 	public void setNivMatiere(String nivMatiere) {
 		this.nivMatiere = nivMatiere;
 	}
-	public String getNbreHeures() {
-		return nbreHeures;
-	}
-	public void setNbreHeures(String nbreHeures) {
-		this.nbreHeures = nbreHeures;
-	}
 	public Module getModule() {
 		return module;
 	}
@@ -86,9 +78,11 @@ public class Matiere {
 	@Override
 	public String toString() {
 		return "Matiere [idMatiere=" + idMatiere + ", nomMatiere=" + nomMatiere + ", libelleMatiere=" + libelleMatiere
-				+ ", langLibelleMatiere=" + langLibelleMatiere + ", nivMatiere=" + nivMatiere + ", nbreHeures="
-				+ nbreHeures + ", module=" + module + "]";
+				+ ", langLibelleMatiere=" + langLibelleMatiere + ", nivMatiere=" + nivMatiere + ", module=" + module
+				+ "]";
 	}
+
+	
 
 	
 	

@@ -3,6 +3,7 @@ package coucheControler;
 import java.sql.Array;
 import java.sql.Connection;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -1102,6 +1103,36 @@ public class Metier implements IMetier {
 		return listSalle;
 
 	}
+	
+	public List<Integer> ChargerSalle()  {
+		List <Integer> listsa = new ArrayList<>();
+		Connection conn = ConnexionBD.getConnection();
+		
+		
+			PreparedStatement ps;
+			try {
+				ps = conn.prepareStatement("Select * from salle");
+			
+			ResultSet res = ps.executeQuery();
+			while (res.next()) {
+				Salle e = new Salle();
+				int id =res.getInt("ID_Salle");
+				/*e.setNomSalle(res.getString("Nom_Salle"));
+				e.setCapaciteSalle(res.getInt("Capacite_Salle"));
+				e.setDisponibiliteSalle(res.getString("Disonibilite"));*/
+				listsa.add(id);
+			}
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+
+		
+		
+
+		return listsa;
+
+	}
 
 	@Override
 	public List<Salle> ChercherSalle(int capacite) {
@@ -1152,12 +1183,13 @@ public class Metier implements IMetier {
 	public void SupprimerSession(int id) {
 		Connection conn = ConnexionBD.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("delete * from sessions where ID_Session = ? ;");
+			PreparedStatement ps = conn.prepareStatement("Delete  from sessions where ID_Session = ? ;");
 			ps.setInt(1, id);
+			ps.executeUpdate();
 			for (Session s : listSession) {
 				if (s.getIdSession() == id) {
 					listSession.remove(s);
-					ps.executeUpdate();
+					
 					System.out.println("Succès!!!");
 				} else {
 					System.out.println("L'id renseigné ne correspond à aucune session");
@@ -1182,7 +1214,7 @@ public class Metier implements IMetier {
 				Session e = new Session();
 				e.setIdSession(res.getInt("ID_Session"));
 				e.setAnneeSession(res.getInt("ID_Annee"));
-				e.setNomSession(res.getString("Nom_Seesion"));
+				e.setNomSession(res.getString("Nom_Session"));
 				e.setDateDebutSession(res.getDate("Date_Debut_Session"));
 				e.setDateFinSession(res.getDate("Date_Fin_Session"));
 				listSession.add(e);
@@ -1194,6 +1226,29 @@ public class Metier implements IMetier {
 		}
 
 		return listSession;
+
+	}
+	
+	
+	public List<Integer> ChargerSession() {
+		List <Integer> listSes= new ArrayList<>();
+		Connection conn = ConnexionBD.getConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement("Select * from sessions");
+			ResultSet res = ps.executeQuery();
+			while (res.next()) {
+				Session e = new Session();
+				int id =res.getInt("ID_Session");
+				
+				listSes.add(id);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return listSes;
 
 	}
 
@@ -1287,7 +1342,7 @@ public class Metier implements IMetier {
 	public void AjouterGroupe(Groupe e, int idHoraire, int idSession, int idSalle, int idModule) {
 		Connection conn = ConnexionBD.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO Groupe VALUES (?, ?, ?, ?, ?, ?, ?)");
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO groupe VALUES (?, ?, ?, ?, ?, ?, ?)");
 			ps.setInt(1, e.getIdGroupe());
 			ps.setString(2, e.getNomGroupe());
 			ps.setDate(3, (Date) e.getDateExamen());
@@ -1295,6 +1350,7 @@ public class Metier implements IMetier {
 			ps.setInt(5, idSession);
 			ps.setInt(6, idSalle);
 			ps.setInt(7, idModule);
+			ps.executeUpdate();
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -1308,6 +1364,7 @@ public class Metier implements IMetier {
 		try {
 			PreparedStatement ps = conn.prepareStatement("delete from Groupe where ID_Groupe = ?");
 			ps.setInt(1, id);
+			ps.executeUpdate();
 			for (Groupe g : listGroupe) {
 				if (g.getIdGroupe() == id) {
 					listGroupe.remove(g);
@@ -1326,7 +1383,7 @@ public class Metier implements IMetier {
 	public List<Groupe> AfficherGroupe() {
 		Connection conn = ConnexionBD.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("Select * from Groupe");
+			PreparedStatement ps = conn.prepareStatement("Select * from groupe");
 			ResultSet res = ps.executeQuery();
 			while (res.next()) {
 				Groupe g = new Groupe();
@@ -1336,32 +1393,32 @@ public class Metier implements IMetier {
 				int idSession = res.getInt("ID_Session");
 				int idSalle = res.getInt("ID_Salle");
 				int idModule = res.getInt("ID_Module");
-				PreparedStatement ps1 = conn.prepareStatement("Select * from Horaire where ID_Horaire = ?");
-				ps1.setInt(1, idHoraire);
+				PreparedStatement ps1 = conn.prepareStatement("Select * from horaire where ID_Horaire =" +idHoraire);
+				//ps1.setInt(1, idHoraire);
 				ResultSet res1 = ps1.executeQuery();
 				if (res1.next()) {
 					Horaire h = new Horaire();
 					h.setIdHoraire(res1.getInt("ID_Horaire"));
 					g.setHoraire(h);
 				}
-				PreparedStatement ps2 = conn.prepareStatement("Select * from Session where ID_Session = ?");
-				ps.setInt(1, idSession);
+				PreparedStatement ps2 = conn.prepareStatement("Select * from sessions where ID_Session =" + idSession);
+				//ps.setInt(1, idSession);
 				ResultSet res2 = ps2.executeQuery();
 				if (res2.next()) {
 					Session s = new Session();
 					s.setIdSession(res2.getInt("ID_Session"));
 					g.setSession(s);
 				}
-				PreparedStatement ps3 = conn.prepareStatement("Select * from Salle where ID_Salle = ?");
-				ps3.setInt(1, idSalle);
+				PreparedStatement ps3 = conn.prepareStatement("Select * from salle where ID_Salle =" + idSalle);
+				//ps3.setInt(1, idSalle);
 				ResultSet res3 = ps3.executeQuery();
 				if (res3.next()) {
 					Salle sal = new Salle();
 					sal.setIdSalle(res3.getInt("ID_Salle"));
 					g.setSalle(sal);
 				}
-				PreparedStatement ps4 = conn.prepareStatement("Select * from Module where ID_Module = ?");
-				ps4.setInt(1, idModule);
+				PreparedStatement ps4 = conn.prepareStatement("Select * from module where ID_Module = " + idModule);
+				//ps4.setInt(1, idModule);
 				ResultSet res4 = ps4.executeQuery();
 				if (res4.next()) {
 					Module mod = new Module();
@@ -1429,7 +1486,7 @@ public class Metier implements IMetier {
 	public List<Matiere> AfficherMatiere() {
 		Connection conn = ConnexionBD.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("Select * from Matiere");
+			PreparedStatement ps = conn.prepareStatement("Select * from matiere ");
 			ResultSet res = ps.executeQuery();
 			while (res.next()) {
 				Matiere e = new Matiere();
@@ -1439,17 +1496,19 @@ public class Metier implements IMetier {
 				e.setLangLibelleMatiere(res.getString("Lang_Libele_Matiere"));
 				e.setNivMatiere(res.getString("Niveau_Matiere"));
 				int idModule = res.getInt("ID_Module");
-				PreparedStatement ps2 = conn.prepareStatement("Select * from Module where ID_Module = ?");
+				PreparedStatement ps2 = conn.prepareStatement("Select * from module where ID_Module = " + idModule);
 
-				ps2.setInt(1, idModule);
+				//ps2.setInt(1, idModule);
 				ResultSet res2 = ps2.executeQuery();
 				if (res2.next()) {
 					Module m = new Module();
 					m.setIdModule(res2.getInt("ID_Module"));
+					m.setLibeleModole(res2.getString("Libele_Module"));
 					e.setModule(m);
+					ps2.close();
 				}
 				listMatiere.add(e);
-				ps2.close();
+				
 			}
 			ps.close();
 		} catch (SQLException e) {
@@ -1506,7 +1565,7 @@ public class Metier implements IMetier {
 	public List<Module> AfficherModule() {
 		Connection conn = ConnexionBD.getConnection();
 		try {
-			PreparedStatement ps = conn.prepareStatement("Select * from Module");
+			PreparedStatement ps = conn.prepareStatement("Select * from module");
 			ResultSet res = ps.executeQuery();
 			while (res.next()) {
 				Module e = new Module();
@@ -1520,6 +1579,26 @@ public class Metier implements IMetier {
 			e.printStackTrace();
 		}
 		return listModule;
+	}
+	
+	public List<Integer> ChargerModule() {
+		List <Integer> listMod = new ArrayList<>();
+		Connection conn = ConnexionBD.getConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement("Select * from module");
+			ResultSet res = ps.executeQuery();
+			while (res.next()) {
+				Module e = new Module();
+				int id =res.getInt("ID_Module");
+				
+				listMod.add(id);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listMod;
 	}
 
 	// *******************************GESTIONS DES NOTES**********************

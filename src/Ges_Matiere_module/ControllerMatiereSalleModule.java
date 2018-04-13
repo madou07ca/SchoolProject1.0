@@ -94,10 +94,6 @@ public class ControllerMatiereSalleModule implements Initializable {
 
     @FXML
     private TableColumn<Matiere, String> viewNivMat;
-
-    @FXML
-    private TableColumn<Matiere, String> viewHrMat;
-
     @FXML
     private TableColumn<Matiere, Integer> viewModuleMat;
 
@@ -383,7 +379,6 @@ public class ControllerMatiereSalleModule implements Initializable {
     	viewLibMat.setCellValueFactory(new PropertyValueFactory<>(" libelleMatiere"));
     	viewLangMat.setCellValueFactory(new PropertyValueFactory<>("langLibelleMatiere"));
     	viewNivMat.setCellValueFactory(new PropertyValueFactory<>("nivMatiere"));
-    	viewHrMat.setCellValueFactory(new PropertyValueFactory<>("nbreHeures"));
     	viewModuleMat.setCellValueFactory(new PropertyValueFactory<>("module"));
     	
     	tViewMatiere.setItems(matList);
@@ -416,11 +411,11 @@ public class ControllerMatiereSalleModule implements Initializable {
     @FXML
     void AjouterMatiere(ActionEvent event) {
       if(tIdMatiere.getText()!= null && tLibelleMatiere.getText()!= null && tLangueMatiere.getText()!= null
-    		  && tNomMatiere.getText()!=null &&tNiveauMatiere.getText()!= null && tNbreHeures.getText()!=null && cMatiere.getValue()!= 0) {
+    		  && tNomMatiere.getText()!=null &&tNiveauMatiere.getText()!= null  && cMatiere.getValue()!= 0) {
     	int numModule =cMatiere.getValue();
     	int id =Integer.parseInt(tIdMatiere.getText());
     	  Matiere matiere = new Matiere (id, tNomMatiere.getText(),tLibelleMatiere.getText(),tLangueMatiere.getText(),
-    			  tNiveauMatiere.getText(),tNbreHeures.getText())  ;
+    			  tNiveauMatiere.getText())  ;
     	metier.AjouterMatiere(matiere, numModule);
     	System.out.println("Succès!!!");
       }
@@ -523,7 +518,7 @@ public class ControllerMatiereSalleModule implements Initializable {
 		cDispoSalle.setValue("OUI");
 		cDispoSalle.setItems(DispoList);
 		cMatiere.setItems(listModule);
-		AfficherSalle(null);
+		//AfficherSalle(null);
 		//cDispoSalle.getItems().addAll("OUI","NON");
 		
 	}

@@ -101,11 +101,10 @@
               <columns>
                 <TableColumn fx:id="viewIdMat" prefWidth="54.0" text="ID" />
                 <TableColumn fx:id="viewNomMat" prefWidth="75.0" text="Nom" />
-                  <TableColumn fx:id="viewLibMat" prefWidth="62.999969482421875" text="Libellé" />
-                  <TableColumn fx:id="viewLangMat" prefWidth="108.0" text="Langue Libellé" />
-                  <TableColumn fx:id="viewNivMat" prefWidth="75.0" text="Niveau" />
-                  <TableColumn fx:id="viewHrMat" prefWidth="108.0" text="Nbres Heures" />
-                  <TableColumn fx:id="viewModuleMat" prefWidth="85.0" text="Module" />
+                  <TableColumn fx:id="viewLibMat" prefWidth="82.0" text="Libellé" />
+                  <TableColumn fx:id="viewLangMat" prefWidth="134.0" text="Langue Libellé" />
+                  <TableColumn fx:id="viewNivMat" prefWidth="114.0" text="Niveau" />
+                  <TableColumn fx:id="viewModuleMat" prefWidth="109.0" text="Module" />
               </columns>
             </TableView>
             <Label alignment="CENTER" layoutX="95.0" layoutY="-3.0" prefHeight="35.0" prefWidth="367.0" text="Matière">
@@ -124,7 +123,6 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
@@ -137,11 +135,9 @@
                   <Label text="Langue Libellé" GridPane.rowIndex="3" />
                   <JFXTextField fx:id="tLangueMatiere" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label text="Niveau" GridPane.rowIndex="4" />
-                  <Label text="Nombres Heures" GridPane.rowIndex="5" />
-                  <Label text="Module" GridPane.rowIndex="6" />
+                  <Label text="Module" GridPane.rowIndex="5" />
                   <JFXTextField fx:id="tNiveauMatiere" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <JFXTextField fx:id="tNbreHeures" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <JFXComboBox fx:id="cMatiere" prefHeight="31.0" prefWidth="301.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <JFXComboBox fx:id="cMatiere" prefHeight="31.0" prefWidth="301.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
             </GridPane>
             <JFXButton fx:id="ajoutMatiere" layoutX="14.0" layoutY="321.0" onAction="#AjouterMatiere" prefHeight="42.0" prefWidth="127.0" text="Ajouter" />

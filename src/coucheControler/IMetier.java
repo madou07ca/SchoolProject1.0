@@ -65,10 +65,12 @@ public interface IMetier {
 	public int CapaciteSalle(int id);
 	public List <Salle> AfficherSalle();
 	public List <Salle> ChercherSalle(int capacite);
+	public List<Integer> ChargerSalle();
 	//***************** GESTION DES SESSION  ******************
 	public void AjouterSession(Session e);
 	public void SupprimerSession(int id);
 	public List <Session> AfficherSession();
+	public List<Integer> ChargerSession();
 	//***************** GESTION DES INSCRIPTIONS  ******************
 	public void AjouterInscription(Inscription e,int idEtudiant, int idSession, int idGroupe, int idPaiement);
 	public List<Inscription> AfficherInscription();
@@ -84,6 +86,7 @@ public interface IMetier {
 	public void AjouterModule(Module e);
 	public void SupprimerModule(int id);
 	public List<Module> AfficherModule();
+	public List<Integer> ChargerModule();
 	//*************Gestion des notes****************
 	public void AjouterNotes(Notes_Etudiant e, int idEtudiant, int idMatiere);
 	public List <Notes_Etudiant> AfficherNotes();

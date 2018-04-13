@@ -7,8 +7,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -104,12 +102,8 @@
             <JFXButton fx:id="annulerGroupe" layoutX="152.0" layoutY="332.0" onAction="#AnnulerGroupe" prefHeight="31.0" prefWidth="98.0" text="Annuler" />
             <JFXButton fx:id="SupGroupe" layoutX="269.0" layoutY="332.0" onAction="#SupprimerGroupe" prefHeight="31.0" prefWidth="98.0" text="Supprimer" />
             <JFXButton fx:id="AfficherGroupe" layoutX="14.0" layoutY="400.0" onAction="#AfficherGroupe" prefHeight="31.0" prefWidth="213.0" text="Afficher la liste" />
-            <JFXTextField fx:id="tSupMatiere" layoutX="387.0" layoutY="332.0" prefHeight="31.0" prefWidth="205.0" promptText="Saisir l'ID" />
-            <ImageView fitHeight="41.0" fitWidth="33.0" layoutX="14.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Ressource/143510.png" />
-               </image>
-            </ImageView>
+            <JFXTextField fx:id="tSupGroupe" layoutX="387.0" layoutY="332.0" prefHeight="31.0" prefWidth="205.0" promptText="Saisir l'ID" />
+            <JFXButton fx:id="ajouterGroupe" layoutX="36.0" layoutY="332.0" onAction="#AjouterGroupe" prefHeight="31.0" prefWidth="98.0" text="Ajouter" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="663.0" layoutY="79.0" prefHeight="800.0" prefWidth="597.0" style="-fx-background-color: #D19275;">
@@ -120,8 +114,8 @@
                   <TableColumn fx:id="viewAnneeSession" prefWidth="104.0" text="Année" />
                   <TableColumn fx:id="viewNomSession" prefWidth="91.0" text="Nom" />
                   <TableColumn fx:id="viewDdSession" prefWidth="110.0" text="Date Debut" />
-                  <TableColumn fx:id="viewNivMat1" prefWidth="117.0" text="Date Fin" />
-                  <TableColumn fx:id="viewNivMat11" prefWidth="117.0" text="Date Fin" />
+                  <TableColumn fx:id="viewDfSession" prefWidth="117.0" text="Date Fin" />
+                  
                </columns>
             </TableView>
             <Label alignment="CENTER" layoutX="95.0" layoutY="-3.0" prefHeight="35.0" prefWidth="367.0" text="Session">
@@ -158,11 +152,7 @@
             <JFXButton fx:id="SupSession" layoutX="269.0" layoutY="332.0" onAction="#SupprimerSession" prefHeight="31.0" prefWidth="98.0" text="Supprimer" />
             <JFXButton fx:id="AfficherSession" layoutX="14.0" layoutY="400.0" onAction="#AfficherSession" prefHeight="31.0" prefWidth="213.0" text="Afficher la liste" />
             <JFXTextField fx:id="tSupSession" layoutX="387.0" layoutY="332.0" prefHeight="31.0" prefWidth="205.0" promptText="Saisir l'ID" />
-            <ImageView fitHeight="41.0" fitWidth="33.0" layoutX="14.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Ressource/143510.png" />
-               </image>
-            </ImageView>
+            <JFXButton fx:id="ajouterSession" layoutX="37.0" layoutY="332.0" onAction="#AddSession" prefHeight="31.0" prefWidth="98.0" text="Ajouter" />
          </children>
       </AnchorPane>
    </children>

@@ -27,6 +27,7 @@ public class Session {
 	public Session() {
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Session(int id, int anne, String text, LocalDate value, LocalDate value2) {
 		// TODO Auto-generated constructor stub
 	}
@@ -62,8 +63,7 @@ public class Session {
 	}
 	@Override
 	public String toString() {
-		return "Session [idSession=" + idSession + ", anneeSession=" + anneeSession + ", nomSession=" + nomSession
-				+ ", dateDebutSession=" + dateDebutSession + ", dateFinSession=" + dateFinSession + "]";
+		return "" +idSession;
 	}
 	
 	

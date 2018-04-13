@@ -1,5 +1,6 @@
 package partieConsole;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -25,6 +26,9 @@ public class Groupe {
 		this.listEtudiant = listEtudiant;
 	}
 	public Groupe() {
+		// TODO Auto-generated constructor stub
+	}
+	public Groupe(int id, String text, LocalDate value) {
 		// TODO Auto-generated constructor stub
 	}
 	public int getIdGroupe() {

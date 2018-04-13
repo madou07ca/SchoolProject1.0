@@ -69,9 +69,9 @@ public class Salle {
 
 	@Override
 	public String toString() {
-		return "Salle [idSalle=" + idSalle + ", nomSalle=" + nomSalle + ", capaciteSalle=" + capaciteSalle
-				+ ", disponibiliteSalle=" + disponibiliteSalle + "]";
-	}
+		//return nomSalle;
+		return "" +idSalle;
+		}
 	
 	
 

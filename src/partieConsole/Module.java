@@ -23,6 +23,11 @@ public class Module {
 	public void setLibeleModole(String libeleModole) {
 		this.libeleModole = libeleModole;
 	}
+	@Override
+	public String toString() {
+		return "" + idModule;
+	}
+	
 	
 
 }
